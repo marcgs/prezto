@@ -11,3 +11,21 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+#bash
+autoload bashcompinit && bashcompinit
+# git
+alias g=git
+# kubectl
+source <(kubectl completion zsh)
+alias k=kubectl
+alias kns='kubectl config set-context --current --namespace '
+alias kctx='kubectl config use-context '
+# helm
+source <(helm completion zsh)
+alias h=helm
+# azure https://stackoverflow.com/questions/49273395/how-to-enable-command-completion-for-azure-cli-in-zsh
+source ~/.az.completion
+# terraform
+alias tf=terraform
+# iterm2 shell integration (https://iterm2.com/documentation-shell-integration.html)
+source ~/.iterm2_shell_integration.zsh
